@@ -10,7 +10,7 @@
     </link>
 </head>
 
-<body class="bg-gray-50">
+<body class="bg-gray-100">
     <!-- This example requires Tailwind CSS v2.0+ -->
     <div>
         <nav class="bg-gray-800">
@@ -25,7 +25,7 @@
                                 <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
                                 <a href="#" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
 
-                                <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Dashboard</a>
+                                <a href="{{ route('dashboard') }}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Dashboard</a>
 
                                 <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Posts</a>
 
@@ -35,15 +35,17 @@
                     <div class="hidden md:block">
                         <div class="ml-4 flex items-center md:ml-6">
 
-                            <!-- here is where the other links will go-->
-                            <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-4 py-2 rounded-md text-sm font-medium">Priya Aswani</a>
-
-                            <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-4 py-2 rounded-md text-sm font-medium">Login</a>
-
-                            <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-4 py-2 rounded-md text-sm font-medium">Register</a>
+                            @auth
+                            <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-4 py-2 rounded-md text-sm font-medium">Sue Johnson</a>
 
                             <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-4 py-2 rounded-md text-sm font-medium">Logout</a>
+                            @endauth
 
+                            @guest
+                            <a href="{{ route('register') }}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-4 py-2 rounded-md text-sm font-medium">Register</a>
+
+                            <a href="{{ route('login') }}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-4 py-2 rounded-md text-sm font-medium">Login</a>
+                            @endguest
                         </div>
                     </div>
 
@@ -56,7 +58,7 @@
                     <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
                     <a href="#" class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium">Home</a>
 
-                    <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Dashboard</a>
+                    <a href="{{ route('dashboard') }}" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Dashboard</a>
 
                     <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Posts</a>
 
