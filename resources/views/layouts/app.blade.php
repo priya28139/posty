@@ -27,7 +27,7 @@
 
                                 <a href="{{ route('dashboard') }}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Dashboard</a>
 
-                                <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Posts</a>
+                                <a href="{{ route('posts') }}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Posts</a>
 
                             </div>
                         </div>
@@ -36,7 +36,7 @@
                         <div class="ml-4 flex items-center md:ml-6">
 
                             @auth
-                            <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-4 py-2 rounded-md text-sm font-medium">Sue Johnson</a>
+                            <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-4 py-2 rounded-md text-sm font-medium">{{ auth()->user()->name }}</a>
 
                             <form action="{{ route('logout') }}" method="POST">
                                 @csrf
@@ -64,7 +64,7 @@
 
                     <a href="{{ route('dashboard') }}" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Dashboard</a>
 
-                    <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Posts</a>
+                    <a href="{{ route('posts') }}" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Posts</a>
 
                 </div>
                 <div class="pt-4 pb-3 border-t border-gray-700">
@@ -72,7 +72,7 @@
                     <div class="mt-1 px-2 space-y-1">
 
                         @auth
-                        <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700">Sue Johnson</a>
+                        <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700">{{ auth()->user()->name }}</a>
                         <form action="{{ route('logout') }}" method="POST">
                             @csrf
                             <button class="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700">Log out</button>
